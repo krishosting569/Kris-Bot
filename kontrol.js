@@ -1,21 +1,25 @@
-/** 
+//⫰⫯ 𝑵𝒐𝒕𝒆 : 𝑲𝒂𝒍𝒂𝒖 𝑴𝒂𝒖 𝑫𝒊 𝑯𝒂𝒑𝒖𝒔 𝑴𝒊𝒌𝒊𝒓 𝑫𝒖𝒍𝒖 𝑵𝒈𝒂𝒃 𝑺𝒊𝒂𝒑𝒂 𝒀𝒂𝒏𝒈 𝑩𝒊𝒌𝒊𝒏 𝑺𝒄𝒓𝒊𝒑𝒕 𝑫𝒂𝒏 𝑴𝒆𝒏𝒈𝒆𝒅𝒊𝒕 𝑵𝒚𝒂
 
-Yg Mau Sv Nomerku?
+//𝐀𝐮𝐭𝐡𝐨𝐫 : 𝑲𝒓𝒊𝒔 𝑯𝒐𝒔𝒕𝒊𝒏𝒈
+//𝐖𝐚 : 085786211623 / 0882007324217
+//sc : nazedev
+//𝐌𝐲 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 : 10 𝑶𝒌𝒕𝒐𝒃𝒆𝒓 2022
 
-wa.me/6285875158363
+//⫹❰⫺ 𝐵𝐼𝐺 𝑇𝐻𝐴𝑁𝐾𝑆 𝑇𝑂 ⫹❱⫺
+//⭝ 𝑨𝒍𝒍𝒂𝒉 𝒀𝒂𝒏𝒈 𝑴𝒂𝒉𝒂 𝑬𝒔𝒂
+//⭝ 𝑶𝒓𝒂𝒏𝒈 𝑻𝒖𝒂
+//⭝ 𝑻𝒆𝒎𝒆𝒏 𝑮𝒘
+//⭝ 𝒀𝒂𝒏𝒈 𝑼𝒅𝒂𝒉 𝑺𝒖𝒑𝒑𝒐𝒓𝒕 𝑮𝒖𝒂
 
-Minimal Kasih Cr kalo mau reupload😡
-Create By Dika Ardnt.
-Recode By Naze & ( Nama Lu )
-
-Kalau Sampai Ketemu Lagi Creator Bot
-Yg Reupload Tanpa Kasih Cr 
-Sc Akan Saya Encode
-
-Base : Hisoka
-Recode : Naze & ( Kris Hosting )
-
-**/
+//⫹⫺ 𝑇𝒉𝑒 𝑁𝑎𝑚𝑒 𝑇𝒉𝑎𝑡 𝐻𝑒𝑙𝑝𝑒𝑑 𝑀𝑒 ⫹⫺
+//⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔
+//⭝ 𝑨𝒅𝒊𝒘𝒂𝒋𝒊𝒔𝒉𝒊𝒏𝒈
+//⭝ 𝑹𝒊𝒔𝒎𝒂𝑩𝒐𝒕𝒛 𝑶𝒇𝒇𝒄
+//⭝ 𝑱𝒂𝒓𝒐𝒕 𝑶𝒇𝒇𝒄
+//⭝ 𝑪𝒉𝒓𝒊𝒔𝒕𝒊𝒂𝒏 𝑰𝒅
+//⭝ 𝑨𝒊𝒏𝒆
+//⭝ 𝒁𝒆𝒆𝒐𝒏𝒆 𝑶𝒇𝒄
+//⭝ 𝑲𝒓𝒊𝒔 𝑯𝒐𝒔𝒕𝒊𝒏𝒈//
 
 const fs = require('fs')
 const chalk = require('chalk')
@@ -64,7 +68,7 @@ global.thumb = fs.readFileSync('./media/image/kris.jpg')
 global.faall = fs.readFileSync('./media/image/fake.jpg')
 global.mygit = 'https://github.com/krishosting569'
 global.myyt = 'https://youtube.com/channel/UCL0sl0mTiIxL-qjiM9oQwrg'
-global.myytv = 'https://youtube.com/channel/UCL0sl0mTiIxL-qjiM9oQwrg'
+global.myytv = 'https://youtu.be/PeLEpmoiO4U'
 global.mygc = "https://chat.whatsapp.com/KeyflNVrBsN6ctjfevI3n0"
 global.botname = 'KrisBotz'
 global.akulaku = 'Bot KrisHosting'
