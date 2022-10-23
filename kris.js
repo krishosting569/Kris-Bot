@@ -3579,13 +3579,31 @@ let capt = `⭔ Title: ${judul}
             capt += `⭔ Years: ${i.years}\n`
             capt += `⭔ Genre: ${i.genre}\n`
             capt += `⭔ Url: ${i.url}\n`
-            capt += `⭔ Thumbnail Url: ${i.thumbnail}\n\n──────────────────────\n`
+            capt += `⭔ Thumbnail Url: ${i.thumbnail}\n\n────────
+            ──────────────\n`
             }
             kris.sendImage(m.chat, res.result[0].thumbnail, capt, m)
             }
             break
 
 //PEMBATAS Menu=======================================
+            case 'sewabot': case 'sewa': case 'buypremium': {
+                kris.sendMessage(m.chat, { image: fs.readFileSync('./media/image/donasi.jpg'), caption: `*${ucapanWaktu} Kak ${m.pushName}*\n\n╭───────────────···
+│             *[ SEWA BOT ]*
+│ 
+│• 1 Minggu = 3k
+│• 1 Bulan = 5K
+│• Permanen = 10K
+│
+│             *[ PREMIUM ]*
+│• 7Hari = 5K
+│• 30Hari = 10K
+│• Permanen = 20K
+╰───────────────···`
+let buttons = [{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '👑Sewa' }, type: 1 }] 
+           await kris.sendButtonText(m.chat, buttons, rules, nyoutube, m, {quoted: fkontak})       
+            }
+            break
             case 'rules': {
 rules = `╭──❍ *Rules BOT*
 │
