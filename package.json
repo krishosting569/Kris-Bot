@@ -1,5 +1,5 @@
 {
-  "name": "naze",
+  "name": "kris-MDV1",
   "version": "1.2.3",
   "description": "WhatsApp Using Lib Baileys Multi Device",
   "main": "index.js",
@@ -72,10 +72,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nazedev/naze-md.git"
+    "url": "git+https://github.com/krishosting569/kris-MDV1.git"
   },
   "bugs": {
-    "url": "https://github.com/nazedev/naze-md/issues"
+    "url": "https://github.com/krishosting569/kris-MDV1/issues"
   },
-  "homepage": "https://github.com/nazedev/naze-md#readme"
+  "homepage": "https://github.com/krishosting569/kris-MDV1#readme"
 }
