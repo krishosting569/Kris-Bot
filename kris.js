@@ -4104,7 +4104,13 @@ let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back'
             let ownernya = ownernomer + '@s.whatsapp.net'
             let me = m.sender
             let ments = [ownernya, me, ini_mark]
-                anu = ` ∫ » *${ucapanWaktu}* « ✧\n⚠︎ *kak @${me.split('@')[0]}*\n♕︎ *Powered : @${ini_mark.split('@')[0]}*\n ∫ » *Creator : @${ownernya.split('@')[0]}*
+                anu = ` ╭─────═[ ALL MENU ]═─────⋆
+│╭────────────────···
+   │ • *${ucapanWaktu}* « ✧\n⚠︎ *kak @${me.split('@')[0]}*\n• *Powered : @${ini_mark.split('@')[0]}*\n• *Creator : @${ownernya.split('@')[0]}*
+   │
+│╰────────────────···
+╰──────────────────────
+
 ╭──❍ *Group Menu*
 │
 │⭔ ${prefix}linkgroup
@@ -4406,8 +4412,7 @@ let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back'
 │⭔ ${prefix}setexif
 │⭔ ${prefix}setmenu [option]
 │
-╰────❍
-By KrisHosting\n_Jan Lupa Donasi_`
+╰────❍`
                 let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
             kris.sendMessage(m.chat, { caption: `${anu}`, location: { jpegThumbnail: await reSize(faall, 300, 200)}, buttons: buttons, footer: nyoutube, mentions: ments})
             }
