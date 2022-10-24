@@ -1,25 +1,9 @@
-//⫰⫯ 𝑵𝒐𝒕𝒆 : 𝑲𝒂𝒍𝒂𝒖 𝑴𝒂𝒖 𝑫𝒊 𝑯𝒂𝒑𝒖𝒔 𝑴𝒊𝒌𝒊𝒓 𝑫𝒖𝒍𝒖 𝑵𝒈𝒂𝒃 𝑺𝒊𝒂𝒑𝒂 𝒀𝒂𝒏𝒈 𝑩𝒊𝒌𝒊𝒏 𝑺𝒄𝒓𝒊𝒑𝒕 𝑫𝒂𝒏 𝑴𝒆𝒏𝒈𝒆𝒅𝒊𝒕 𝑵𝒚𝒂
-
-//𝐀𝐮𝐭𝐡𝐨𝐫 : 𝑲𝒓𝒊𝒔 𝑯𝒐𝒔𝒕𝒊𝒏𝒈
-//𝐖𝐚 : 085786211623 / 0882007324217
-//𝐛𝐚𝐬𝐞 : 𝑩𝒐𝒄𝒉𝒊𝒍 𝑮𝒂𝒎𝒊𝒏𝒈
-//𝐌𝐲 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 : 10 𝑶𝒌𝒕𝒐𝒃𝒆𝒓 2022
-
-//⫹❰⫺ 𝐵𝐼𝐺 𝑇𝐻𝐴𝑁𝐾𝑆 𝑇𝑂 ⫹❱⫺
-//⭝ 𝑨𝒍𝒍𝒂𝒉 𝒀𝒂𝒏𝒈 𝑴𝒂𝒉𝒂 𝑬𝒔𝒂
-//⭝ 𝑶𝒓𝒂𝒏𝒈 𝑻𝒖𝒂
-//⭝ 𝑻𝒆𝒎𝒆𝒏 𝑮𝒘
-//⭝ 𝒀𝒂𝒏𝒈 𝑼𝒅𝒂𝒉 𝑺𝒖𝒑𝒑𝒐𝒓𝒕 𝑮𝒖𝒂
-
-//⫹⫺ 𝑇𝒉𝑒 𝑁𝑎𝑚𝑒 𝑇𝒉𝑎𝑡 𝐻𝑒𝑙𝑝𝑒𝑑 𝑀𝑒 ⫹⫺
-//⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔⸔
-//⭝ 𝑨𝒅𝒊𝒘𝒂𝒋𝒊𝒔𝒉𝒊𝒏𝒈
-//⭝ 𝑹𝒊𝒔𝒎𝒂𝑩𝒐𝒕𝒛 𝑶𝒇𝒇𝒄
-//⭝ 𝑱𝒂𝒓𝒐𝒕 𝑶𝒇𝒇𝒄
-//⭝ 𝑪𝒉𝒓𝒊𝒔𝒕𝒊𝒂𝒏 𝑰𝒅
-//⭝ 𝑨𝒊𝒏𝒆
-//⭝ 𝒁𝒆𝒆𝒐𝒏𝒆 𝑶𝒇𝒄
-//⭝ 𝑲𝒓𝒊𝒔 𝑯𝒐𝒔𝒕𝒊𝒏𝒈//
+/**
+   * Create By Dika Ardnt.
+   * Recode By kris Dev
+   * Contact Me on wa.me/6282113821188
+   * Follow https://github.com/nazedev
+*/
 
 require('./kontrol')
 const { default: nazeConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
@@ -84,7 +68,7 @@ if (global.db) setInterval(async () => {
     if (global.db.data) await global.db.write()
   }, 30 * 1000)
 
-async function startNaze() {
+async function startKris() {
     const kris = nazeConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
@@ -130,17 +114,17 @@ async function startNaze() {
        } catch {
        ppgc = 'https://shortlink.hisokaarridho.my.id/rg1oT'
        }
-       let wm_krishosting = { url : ppgc }
+       let wm_nazedev = { url : ppgc }
        if (pea[0].announce == true) {
-       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nGroup telah ditutup oleh admin, Sekarang hanya admin yang dapat mengirim pesan !`, `Group Settings Change Message by kris Dev`, wm_krishosting, [])
+       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nGroup telah ditutup oleh admin, Sekarang hanya admin yang dapat mengirim pesan !`, `Group Settings Change Message by kris Dev`, wm_nazedev, [])
        } else if(pea[0].announce == false) {
-       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nGroup telah dibuka oleh admin, Sekarang peserta dapat mengirim pesan !`, `Group Settings Change Message by kris Dev`, wm_krishosting, [])
+       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nGroup telah dibuka oleh admin, Sekarang peserta dapat mengirim pesan !`, `Group Settings Change Message by kris Dev`, wm_nazedev, [])
        } else if (pea[0].restrict == true) {
-       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nInfo group telah dibatasi, Sekarang hanya admin yang dapat mengedit info group !`, `Group Settings Change Message by kris Dev`, wm_krishosting, [])
+       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nInfo group telah dibatasi, Sekarang hanya admin yang dapat mengedit info group !`, `Group Settings Change Message by kris Dev`, wm_nazedev, [])
        } else if (pea[0].restrict == false) {
-       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nInfo group telah dibuka, Sekarang peserta dapat mengedit info group !`, `Group Settings Change Message by kris Dev`, wm_krishosting, [])
+       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nInfo group telah dibuka, Sekarang peserta dapat mengedit info group !`, `Group Settings Change Message by kris Dev`, wm_nazedev, [])
        } else {
-       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nGroup Subject telah diganti menjadi *${pea[0].subject}*`, `Group Settings Change Message by kris hostinh`, wm_krishosting, [])
+       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nGroup Subject telah diganti menjadi *${pea[0].subject}*`, `Group Settings Change Message by kris Dev`, wm_nazedev, [])
      }
     })
 
@@ -165,7 +149,7 @@ async function startNaze() {
                 }
                 
                 let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
-                let nyoutube = ('© kris')
+                let nyoutube = ('© kris\nYoutube/Sc :\nhttps://youtube.com/c/Nazedev')
                 let jumhal = '100000000000000'
                 if (anu.action == 'add') {
                     kris.sendMessage(anu.id, { image: { url: ppuser }, fileLength: jumhal, contextInfo: { mentionedJid: [num] }, caption: `Welcome To ${metadata.subject} @${num.split("@")[0]}`, buttons: buttons, footer: nyoutube})
@@ -221,7 +205,7 @@ async function startNaze() {
 	for (let i of kon) {
 	    list.push({
 	    	displayName: await kris.getName(i + '@s.whatsapp.net'),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await kris.getName(i + '@s.whatsapp.net')}\nFN:${await kris.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET:krishosting@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://instagram.com/kris.dev\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Indonesia;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await kris.getName(i + '@s.whatsapp.net')}\nFN:${await kris.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET:nazedev@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://instagram.com/kris.dev\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Indonesia;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 	    })
 	}
 	kris.sendMessage(jid, { contacts: { displayName: `${list.length} Kontak`, contacts: list }, ...opts }, { quoted })
@@ -253,12 +237,12 @@ async function startNaze() {
         if (connection === 'close') {
         let reason = new Boom(lastDisconnect?.error)?.output.statusCode
             if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); kris.logout(); }
-            else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, reconnecting...."); startNaze(); }
-            else if (reason === DisconnectReason.connectionLost) { console.log("Connection Lost from Server, reconnecting..."); startNaze(); }
+            else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, reconnecting...."); startKris(); }
+            else if (reason === DisconnectReason.connectionLost) { console.log("Connection Lost from Server, reconnecting..."); startKris(); }
             else if (reason === DisconnectReason.connectionReplaced) { console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First"); kris.logout(); }
             else if (reason === DisconnectReason.loggedOut) { console.log(`Device Logged Out, Please Scan Again And Run.`); kris.logout(); }
-            else if (reason === DisconnectReason.restartRequired) { console.log("Restart Required, Restarting..."); startNaze(); }
-            else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); startNaze(); }
+            else if (reason === DisconnectReason.restartRequired) { console.log("Restart Required, Restarting..."); startKris(); }
+            else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); startKris(); }
             else kris.end(`Unknown DisconnectReason: ${reason}|${connection}`)
         }
         console.log('Connected...', update)
@@ -732,7 +716,7 @@ async function startNaze() {
     return kris
 }
 
-startNaze()
+startKris()
 
 
 let file = require.resolve(__filename)
