@@ -986,7 +986,7 @@ break
             	m.reply('*Total Ada 231 Fitur*\n_Ketik Req Untuk Request Fitur_')
             }
             break
-            case 'donasi': case 'sewabot': case 'sewa': case 'buypremium': case 'donate': {
+            case 'donasi': case 'donate': {
                 kris.sendMessage(m.chat, { image: fs.readFileSync('./media/image/donasi.jpg'), caption: `*${ucapanWaktu} Kak ${m.pushName}*\n\n *Jika ingin berdonasi silahkan scan gambar diatas*\n\n*Jika ingin sewa bot atau premium*\n*Silahkan Chat Owner*\n\n*Atau klik link dibawah ini*\n_https://saweria.co/kris_\n\n*Atau Transfer via*\n- *Gopay Dana Ovo Qris ShopeePay*\n Ke nomer berikut : 0882007324217\n\n_Terima kasih_` }, { quoted: m })
             }
             break
@@ -3579,36 +3579,34 @@ let capt = `⭔ Title: ${judul}
             capt += `⭔ Years: ${i.years}\n`
             capt += `⭔ Genre: ${i.genre}\n`
             capt += `⭔ Url: ${i.url}\n`
-            capt += `⭔ Thumbnail Url: ${i.thumbnail}\n\n────────
-            ──────────────\n`
+            capt += `⭔ Thumbnail Url: ${i.thumbnail}\n\n──────────────────────\n`
             }
             kris.sendImage(m.chat, res.result[0].thumbnail, capt, m)
             }
             break
 
-//PEMBATAS Menu=======================================
-            case 'sewabot': case 'sewa': case 'buypremium': {
-                kris.sendMessage(m.chat, { image: fs.readFileSync('./media/image/donasi.jpg'), caption: `*${ucapanWaktu} Kak ${m.pushName}*\n\n╭───────────────···
-│             *[ SEWA BOT ]*
-│ 
-│• 1 Minggu = 3k
-│• 1 Bulan = 5K
-│• Permanen = 10K
+//PEMBATAS Menu======================================
+            case 'sewa': {
+rules = `╭──❍ *Rules BOT*
 │
-│             *[ PREMIUM ]*
-│• 7Hari = 5K
-│• 30Hari = 10K
-│• Permanen = 20K
-╰───────────────···`
-let buttons = [{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '👑Sewa' }, type: 1 }] 
-           await kris.sendButtonText(m.chat, buttons, rules, nyoutube, m, {quoted: fkontak})       
+│ • *1Minggu : 3K*
+│ • *Perbulan : 5K*
+│ • *Permanen : 10K*
+│ • *Mau Buy Sc? Pm Admin
+│ 
+╰────❍`
+let buttons = [{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '👑Sewa' }, type: 1 }]
+            await kris.sendButtonText(m.chat, buttons, rules, nyoutube, m, {quoted: fkontak})
             }
             break
             case 'rules': {
 rules = `╭──❍ *Rules BOT*
 │
-│ *Intinya Jangan Spam❗*
-│
+│ • *Jangan Spam Bot*
+│ • *Jangan Culik Bot*
+│ • *Kasih Jeda 1-10 Menit*
+│ • *Melanggar? Denda 10K*
+│ 
 ╰────❍`
 let buttons = [{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '👑Sewa' }, type: 1 }]
             await kris.sendButtonText(m.chat, buttons, rules, nyoutube, m, {quoted: fkontak})
@@ -4104,13 +4102,7 @@ let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back'
             let ownernya = ownernomer + '@s.whatsapp.net'
             let me = m.sender
             let ments = [ownernya, me, ini_mark]
-                anu = ` ╭─────═[ ALL MENU ]═─────⋆
-│╭────────────────···
-   │ • *${ucapanWaktu}* « ✧\n⚠︎ *kak @${me.split('@')[0]}*\n• *Powered : @${ini_mark.split('@')[0]}*\n• *Creator : @${ownernya.split('@')[0]}*
-   │
-│╰────────────────···
-╰──────────────────────
-
+                anu = ` ∫ » *${ucapanWaktu}* « ✧\n⚠︎ *kak @${me.split('@')[0]}*\n♕︎ *Powered : @${ini_mark.split('@')[0]}*\n ∫ » *Creator : @${ownernya.split('@')[0]}*
 ╭──❍ *Group Menu*
 │
 │⭔ ${prefix}linkgroup
@@ -4412,7 +4404,8 @@ let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back'
 │⭔ ${prefix}setexif
 │⭔ ${prefix}setmenu [option]
 │
-╰────❍`
+╰────❍
+By KrisHosting\n_Jan Lupa Donasi_`
                 let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
             kris.sendMessage(m.chat, { caption: `${anu}`, location: { jpegThumbnail: await reSize(faall, 300, 200)}, buttons: buttons, footer: nyoutube, mentions: ments})
             }
