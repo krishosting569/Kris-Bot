@@ -3680,12 +3680,14 @@ let alfamart = `628111500959@s.whatsapp.net`
   showAdAttribution: true,
   thumbnail: thumb,
   mediaType: 2,
+  mediaUrl: myytv,
+  sourceUrl: myyt
   }}
   }
   kris.sendMessage(m.chat, buttonMessage, {quoted: fkontak})
   }
  break
-            case 'simplemenu': case 'list': case 'help': {
+            case 'listmenu': case 'list': case 'help': {
             let ownernya = ownernomer + '@s.whatsapp.net'
             let me = m.sender
             let ments = [ownernya, me, ini_mark]
