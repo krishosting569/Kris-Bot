@@ -256,7 +256,7 @@ const sendStickerFromUrl = async(to, url) => {
 		const fvideo = {key: { fromMe: false,participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {}) },message: { "videoMessage": { "title":`${ytname}`, "h": `Hmm`,'seconds': '359996400', 'caption': `${ytname}`, 'jpegThumbnail': await reSize(thumb, 100, 100)}}}
 		const floc = {key : {participant : '0@s.whatsapp.net', ...(m.chat ? { remoteJid: `status@broadcast` } : {}) },message: {locationMessage: {name: `${ytname}`,jpegThumbnail: await reSize(thumb, 100, 100)}}}
 		const floc2 = {key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {}) }, message: { "liveLocationMessage": { "title": `${ytname}`,"h": `Hmm`, 'jpegThumbnail': await reSize(thumb, 100, 100)}}}
-		const fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': `${ytname}`, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;ytname,;;;\nFN:ytname\nitem1.TEL;waid=6285875158363:6285875158363\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, 'jpegThumbnail': await reSize(thumb, 100, 100), thumbnail: await reSize(thumb, 100, 100),sendEphemeral: true}}}
+		const fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': `${ytname}`, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;ytname,;;;\nFN:ytname\nitem1.TEL;waid=6285786211623:6285786211623\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, 'jpegThumbnail': await reSize(thumb, 100, 100), thumbnail: await reSize(thumb, 100, 100),sendEphemeral: true}}}
 	    const fakestatus = {key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {})},message: { "imageMessage": {"url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc","mimetype": "image/jpeg","caption": `${ytname}`,"fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=","fileLength": "28777","height": 1080,"width": 1079,"mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=","fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=","directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69","mediaKeyTimestamp": "1610993486","jpegThumbnail": await reSize(thumb, 100, 100),"scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="}}}
 		
 
@@ -3592,7 +3592,7 @@ rules = `╭──❍ *Rules BOT*
 │ • *1Minggu : 3K*
 │ • *Perbulan : 5K*
 │ • *Permanen : 10K*
-│ • *Mau Buy Sc? Pm Admin
+│ • *Mau Buy Sc? Pm Admin*
 │ 
 ╰────❍`
 let buttons = [{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '👑Sewa' }, type: 1 }]
@@ -3600,7 +3600,7 @@ let buttons = [{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu'
             }
             break
             case 'rules': {
-rules = `╭──❍ *Rules BOT*
+rules = `╭──❍ *SEWA*
 │
 │ • *Jangan Spam Bot*
 │ • *Jangan Culik Bot*
@@ -3639,7 +3639,28 @@ let alfamart = `628111500959@s.whatsapp.net`
             case 'menu': {
             let ownernya = ownernomer + '@s.whatsapp.net'
             let me = m.sender
-            let jawab = `*${ucapanWaktu}* ${pushname} Hai Saya Adalah ${botname} Ada Yang Bisa ${botname} Bantu? Patuhi Rules  Ya`
+            let jawab = `*${ucapanWaktu}*
+╭──❍「 𝙄𝙉𝙁𝙊 𝙐𝙎𝙀𝙍 」❍
+├ *Nama* : ${pushname}
+├ *Number* : @${me.split('@')[0]}
+├ *Premium* : ${isPremium ? '✅' : `❌`}
+├ *Limit* : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
+╰──❍
+╭──❍「 𝙄𝙉𝙁𝙊 𝘽𝙊𝙏 」❍
+├ *Nama Bot* : ${pushname}
+├ *Powered* : @${ini_mark.split('@')[0]}
+├ *Owner* : @${ownernya.split('@')[0]}
+├ *Mode* : ${kris.public ? 'Public' : `Self`}
+├ *Prefix* :「 MULTI-PREFIX 」
+├ *Total Hit* : ${jumlahcmd}
+├ *Total Hit Today* : ${jumlahharian}
+╰──❍
+╭──❍「 𝙄𝙉𝘿𝙊𝙉𝙀𝙎𝙄𝘼𝙉 𝙏𝙄𝙈𝙀 」❍
+├ *Hari Ini* : ${hariini}
+├ *Wib* : ${barat} WIB
+├ *Wita* : ${tengah} WITA
+├ *Wit* : ${timur} WIT
+╰──❍`
             let ments = [ownernya, me, ini_mark]
             let buttons = [{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             let buttonMessage = {
@@ -3659,8 +3680,6 @@ let alfamart = `628111500959@s.whatsapp.net`
   showAdAttribution: true,
   thumbnail: thumb,
   mediaType: 2,
-  mediaUrl: myytv,
-  sourceUrl: myyt
   }}
   }
   kris.sendMessage(m.chat, buttonMessage, {quoted: fkontak})
@@ -4102,7 +4121,29 @@ let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back'
             let ownernya = ownernomer + '@s.whatsapp.net'
             let me = m.sender
             let ments = [ownernya, me, ini_mark]
-                anu = ` ∫ » *${ucapanWaktu}* « ✧\n⚠︎ *kak @${me.split('@')[0]}*\n♕︎ *Powered : @${ini_mark.split('@')[0]}*\n ∫ » *Creator : @${ownernya.split('@')[0]}*
+                anu = ` *${ucapanWaktu}*
+╭──❍「 𝙄𝙉𝙁𝙊 𝙐𝙎𝙀𝙍 」❍
+├ *Nama* : ${pushname}
+├ *Number* : @${me.split('@')[0]}
+├ *Premium* : ${isPremium ? '✅' : `❌`}
+├ *Limit* : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
+╰──❍
+╭──❍「 𝙄𝙉𝙁𝙊 𝘽𝙊𝙏 」❍
+├ *Nama Bot* : ${pushname}
+├ *Powered* : @${ini_mark.split('@')[0]}
+├ *Owner* : @${ownernya.split('@')[0]}
+├ *Mode* : ${kris.public ? 'Public' : `Self`}
+├ *Prefix* :「 MULTI-PREFIX 」
+├ *Total Hit* : ${jumlahcmd}
+├ *Total Hit Today* : ${jumlahharian}
+╰──❍
+╭──❍「 𝙄𝙉𝘿𝙊𝙉𝙀𝙎𝙄𝘼𝙉 𝙏𝙄𝙈𝙀 」❍
+├ *Hari Ini* : ${hariini}
+├ *Wib* : ${barat} WIB
+├ *Wita* : ${tengah} WITA
+├ *Wit* : ${timur} WIT
+╰──❍`
+
 ╭──❍ *Group Menu*
 │
 │⭔ ${prefix}linkgroup
