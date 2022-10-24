@@ -10,7 +10,7 @@
 <a href="https://github.com/nazedev"><img title="Author" src="https://img.shields.io/badge/Script-NazeDev-red.svg?style=for-the-badge&logo=github"></a>
 
 
-<a href="https://github.com/KrisHost-ofc/Alphabot-Md"><img title="Recode" src="https://img.shields.io/badge/Recode-KrisHosting-red.svg?style=for-the-badge&logo=github"></a>
+<a href="https://github.com/KrisHost-ofc/Alphabot-Md"><img title="Recode" src="https://img.shields.io/badge/Recode-KrisHost-red.svg?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
 <a href="https://github.com/zeeone-ofc/followers"><img title="Followers" src="https://img.shields.io/github/followers/zeeone-ofc?color=red&style=flat-square"></a>
