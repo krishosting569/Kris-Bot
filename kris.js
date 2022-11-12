@@ -43,6 +43,7 @@ const emoji = new EmojiAPI()
 const { exec, spawn, execSync } = require("child_process")
 const moment = require('moment-timezone')
 const { JSDOM } = require('jsdom')
+const { jadibot, conns } = require('./jadibot')
 const speed = require('performance-now')
 const { performance } = require('perf_hooks')
 const { Primbon } = require('scrape-primbon')
@@ -984,6 +985,10 @@ break
 //PEMBATAS ADMIN & OWNER=======================================
             case 'totalfitur': case 'totalfiture': case 'fiture': case 'fitur': {
             	m.reply('*Total Ada 231 Fitur*\n_Ketik Req Untuk Request Fitur_')
+            }
+            break
+            case 'donasi': case 'donate': {
+                kris.sendMessage(m.chat, { image: fs.readFileSync('./media/image/donasi.jpg'), caption: `*${ucapanWaktu} Kak ${m.pushName}*\n\n *Jika ingin berdonasi silahkan scan gambar diatas*\n\n*Jika ingin sewa bot atau premium*\n*Silahkan Chat Owner*\n\n*Atau klik link dibawah ini*\n_https://saweria.co/kris_\n\n*Atau Transfer via*\n- *Gopay Dana Ovo Qris ShopeePay*\n Ke nomer berikut : 0882007324217\n\n_Terima kasih_` }, { quoted: m })
             }
             break
             case 'donasi': case 'donate': {
@@ -3172,60 +3177,38 @@ break
                 }
             }
             break
-             case 'tiktok': case 'tiktoknowm': {
-                if (!text) throw 'Masukkan Query Link!'
-                m.reply(mess.wait)
-                let anu = await fetchJson(`https://anabotofc.herokuapp.com/api/download/tiktok2?url=${text}&apikey=AnaBot`)
-                let buttons = [
-                    {buttonId: `allmenu`, buttonText: {displayText: '📖List Menu'}, type: 1},
-                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
-                ]
-                let buttonMessage = {
-                    video: { url: anu.result.nowm },
-                    caption: `Download From ${text}`,
-                    footer: nyoutube,
-                    buttons: buttons,
-                    headerType: 5
-                }
-                kris.sendMessage(m.chat, buttonMessage, { quoted: m })
-            }
+            case 'tiktokvideo':{
+            if (!q) return reply(`Link Nya Kak???\nContoh ${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
+            let res = await tiktokdl(q)
+kris.sendMessage(m.chat,{video:{url: res.media[1].url},caption: `${mess.succes}`},{quoted:m})
+}
             break
-           /**case 'tiktokwm': case 'tiktokwatermark': {
-                if (!text) throw 'Masukkan Query Link!'
-                m.reply(mess.wait)
-                let anu = await fetchJson(`https://botcahx-rest-api.herokuapp.com/api/dowloader/tikok?url=${text}`)
-                let buttons = [
-                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
-                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
-                ]
-                let buttonMessage = {
-                    video: { url: anu.result.video_original },
-                    caption: `Download From ${text}`,
-                    footer: nyoutube,
-                    buttons: buttons,
-                    headerType: 5
-                }
-                kris.sendMessage(m.chat, buttonMessage, { quoted: m })
-            }
-            break**/
-            case 'tiktokmp3': case 'tiktokaudio': {
-                if (!text) throw 'Masukkan Query Link!'
-                m.reply(mess.wait)
-                let anu = await fetchJson(`https://anabotofc.herokuapp.com/api/download/tiktok2?url=${text}&apikey=AnaBot`)
-                let buttons = [
-                    {buttonId: `allmenu`, buttonText: {displayText: '📖List Menu'}, type: 1},
-                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1}
-                ]
-                let buttonMessage = {
-                    text: `Download From ${text}`,
-                    footer: nyoutube,
-                    buttons: buttons,
-                    headerType: 2
-                }
-                let msg = await kris.sendMessage(m.chat, buttonMessage, { quoted: m })
-                kris.sendMessage(m.chat, { audio: { url: anu.result.nowm }, mimetype: 'audio/mpeg'}, { quoted: msg })
-            }
+            case 'tiktokaudio':{
+            if (!q) return reply(`Link Nya Kak???\nContoh ${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
+            let tytyd = await tiktokdl(q)
+kris.sendMessage(m.chat,{audio:{url: tytyd.media[2].url}, mimetype: "audio/mp4", ptt:false},{quoted:m})
+}
             break
+            case 'jadibot': {
+if (m.isGroup) return reply(mess.private)
+if (!isPrem) return replyprem(mess.premium)
+jadibot(kris, m, from)
+}
+break
+case 'listjadibot': 
+try {
+let user = [... new Set([...global.conns.filter(kris => kris.user).map(kris => kris.user)])]
+te = "*List Jadibot*\n\n"
+for (let i of user){
+y = await kris.decodeJid(i.id)
+te += " × User : @" + y.split("@")[0] + "\n"
+te += " × Name : " + i.name + "\n\n"
+}
+kris.sendMessage(from,{text:te,mentions: [y], },{quoted:m})
+} catch (err) {
+reply(`Belum Ada User Yang Jadibot`)
+}
+break
 	        case 'instagram': case 'ig': case 'igdl': {
                 if (!text) throw 'No Query Url!'
                 m.reply(mess.wait)
@@ -3237,7 +3220,7 @@ break
                     kris.sendFileUrl(m.chat, anu.media[0].url, `Download Url Instagram From ${isUrl(text)[0]}`, m)
                 }
             }
-            break
+            break          
             case 'joox': case 'jooxdl': {
                 if (!text) throw 'No Query Title'
                 m.reply(mess.wait)
