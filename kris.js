@@ -23,6 +23,8 @@
 
 require('./kontrol')
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
+
+//apikey
 const fs = require('fs')
 const os = require('os')
 const util = require('util')
@@ -32,6 +34,8 @@ const axios = require('axios')
 const chalk = require('chalk')
 const yts = require('yt-search')
 const xfar = require('xfarr-api')
+
+//respon
 const google = require('google-it')
 const maker = require('mumaker')
 const naztod = require("tod-api")
@@ -43,7 +47,6 @@ const emoji = new EmojiAPI()
 const { exec, spawn, execSync } = require("child_process")
 const moment = require('moment-timezone')
 const { JSDOM } = require('jsdom')
-const { jadibot, conns } = require('./jadibot')
 const speed = require('performance-now')
 const { performance } = require('perf_hooks')
 const db_user = JSON.parse(fs.readFileSync('./database/pengguna.json'));
@@ -3216,49 +3219,17 @@ break
             }
             break
             case 'tiktokvideo':{
-         if (isGroup && isAutoDownloadTT) {
-if (chats.match(/(tiktok.com)/gi)){
-reply('Url tiktok terdekteksi\nSedang mengecek data url.')
-await sleep(3000)
-var tt_res = await fetchJson(`https://api.lolhuman.xyz/api/tiktok?apikey=SadTeams&url=${chats}`)
-if (tt_res.status == 404) return reply('Gagal url tidak ditemukan')
-var lagu_tt = await getBuffer(`https://api.lolhuman.xyz/api/tiktokmusic?apikey=SadTeams&url=${chats}`)
-reply(`𝗧𝗜𝗞𝗧𝗢𝗞 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗
-
-*Author:* Kris Official
-*Title:* ${tt_res.result.title}
-*Durasi:* ${tt_res.result.duration}
-*Username:* ${tt_res.result.author.username}
-*Nickname:* ${tt_res.result.author.nickname}
-*Source:* ${chats}
-
-Video & Audio sedang dikirim...`)
-conn.sendMessage(sender,{video:{url:tt_res.result.link}, caption:'No Watermark!'}, {quotes:msg})
-conn.sendMessage(sender,{audio:lagu_tt, mimetype:'audio/mpeg', fileName:'tiktokMusic.mp3'}, {quotes:msg})
-if (isGroup) return conn.sendMessage(from, {text:'Media sudah dikirim lewat chat pribadi bot.'}, {quoted:msg})
-}
+            if (!q) return reply(`Link Nya Kak???\nContoh ${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
+            let res = await tiktokdl(q)
+kris.sendMessage(m.chat,{video:{url: res.media[1].url},caption: `${mess.succes}`},{quoted:m})
 }
             break
-            case 'jadibot': {
-if (m.isGroup) return reply(mess.private)
-if (!isPrem) return replyprem(mess.premium)
-jadibot(kris, m, from)
+            case 'tiktokaudio':{
+            if (!q) return reply(`Link Nya Kak???\nContoh ${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
+            let tytyd = await tiktokdl(q)
+kris.sendMessage(m.chat,{audio:{url: tytyd.media[2].url}, mimetype: "audio/mp4", ptt:false},{quoted:m})
 }
-break
-case 'listjadibot': 
-try {
-let user = [... new Set([...global.conns.filter(kris => kris.user).map(kris => kris.user)])]
-te = "*List Jadibot*\n\n"
-for (let i of user){
-y = await kris.decodeJid(i.id)
-te += " × User : @" + y.split("@")[0] + "\n"
-te += " × Name : " + i.name + "\n\n"
-}
-kris.sendMessage(from,{text:te,mentions: [y], },{quoted:m})
-} catch (err) {
-reply(`Belum Ada User Yang Jadibot`)
-}
-break
+            break
 	        case 'instagram': case 'ig': case 'igdl': {
                 if (!text) throw 'No Query Url!'
                 m.reply(mess.wait)
