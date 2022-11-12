@@ -3636,7 +3636,7 @@ let alfamart = `628111500959@s.whatsapp.net`
                     await kris.sendButtonText(m.chat, buttons, jawab, kris.user.name, m, {mentions: ments})
             }
             break
-            case 'menu': {
+            case 'krismenu': {
             let ownernya = ownernomer + '@s.whatsapp.net'
             let me = m.sender
             let jawab = `*${ucapanWaktu}*
@@ -4120,12 +4120,11 @@ let buttons = [{ buttonId: 'listmenu', buttonText: { displayText: '⬅️Back' }
             await kris.sendButtonText(m.chat, buttons, oner, nyoutube, m, {quoted: fkontak})
             }
             break
-            case 'allmenu': {
+            case 'menu': {
             let ownernya = ownernomer + '@s.whatsapp.net'
             let me = m.sender
             let ments = [ownernya, me, ini_mark]
-                anu = ` ∫ » *${ucapanWaktu}* « ✧\n⚠︎ *kak @${me.split('@')[0]}*\n♕︎ *Powered : @${ini_mark.split('@')[0]}*\n ∫ » *Creator : @${ownernya.split('@')[0]}*
-                
+                anu = ` ∫ » *${ucapanWaktu}*
 ╭──❍ *Group Menu*
 │
 │⭔ ${prefix}linkgroup
