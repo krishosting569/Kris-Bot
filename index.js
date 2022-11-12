@@ -2,11 +2,11 @@
    * Create By Dika Ardnt.
    * Recode By kris Dev
    * Contact Me on wa.me/6282113821188
-   * Follow https://github.com/nazedev
+   * Follow https://github.com/krisdev
 */
 
 require('./kontrol')
-const { default: nazeConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
+const { default: krisConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
 const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
 const pino = require('pino')
 const { Boom } = require('@hapi/boom')
@@ -69,7 +69,7 @@ if (global.db) setInterval(async () => {
   }, 30 * 1000)
 
 async function startKris() {
-    const kris = nazeConnect({
+    const kris = krisConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
         browser: ['YT kris','Safari','1.0.0'],
@@ -114,17 +114,17 @@ async function startKris() {
        } catch {
        ppgc = 'https://shortlink.hisokaarridho.my.id/rg1oT'
        }
-       let wm_nazedev = { url : ppgc }
+       let wm_krisdev = { url : ppgc }
        if (pea[0].announce == true) {
-       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nGroup telah ditutup oleh admin, Sekarang hanya admin yang dapat mengirim pesan !`, `Group Settings Change Message by kris Dev`, wm_nazedev, [])
+       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nGroup telah ditutup oleh admin, Sekarang hanya admin yang dapat mengirim pesan !`, `Group Settings Change Message by kris Dev`, wm_krisdev, [])
        } else if(pea[0].announce == false) {
-       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nGroup telah dibuka oleh admin, Sekarang peserta dapat mengirim pesan !`, `Group Settings Change Message by kris Dev`, wm_nazedev, [])
+       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nGroup telah dibuka oleh admin, Sekarang peserta dapat mengirim pesan !`, `Group Settings Change Message by kris Dev`, wm_krisdev, [])
        } else if (pea[0].restrict == true) {
-       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nInfo group telah dibatasi, Sekarang hanya admin yang dapat mengedit info group !`, `Group Settings Change Message by kris Dev`, wm_nazedev, [])
+       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nInfo group telah dibatasi, Sekarang hanya admin yang dapat mengedit info group !`, `Group Settings Change Message by kris Dev`, wm_krisdev, [])
        } else if (pea[0].restrict == false) {
-       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nInfo group telah dibuka, Sekarang peserta dapat mengedit info group !`, `Group Settings Change Message by kris Dev`, wm_nazedev, [])
+       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nInfo group telah dibuka, Sekarang peserta dapat mengedit info group !`, `Group Settings Change Message by kris Dev`, wm_krisdev, [])
        } else {
-       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nGroup Subject telah diganti menjadi *${pea[0].subject}*`, `Group Settings Change Message by kris Dev`, wm_nazedev, [])
+       kris.send5ButImg(pea[0].id, `「 *Group Settings Change* 」\n\nGroup Subject telah diganti menjadi *${pea[0].subject}*`, `Group Settings Change Message by kris Dev`, wm_krisdev, [])
      }
     })
 
@@ -149,7 +149,7 @@ async function startKris() {
                 }
                 
                 let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
-                let nyoutube = ('© kris\nYoutube/Sc :\nhttps://youtube.com/c/Nazedev')
+                let nyoutube = ('© kris\nYoutube/Sc :\nhttps://youtube.com/c/krisdev')
                 let jumhal = '100000000000000'
                 if (anu.action == 'add') {
                     kris.sendMessage(anu.id, { image: { url: ppuser }, fileLength: jumhal, contextInfo: { mentionedJid: [num] }, caption: `Welcome To ${metadata.subject} @${num.split("@")[0]}`, buttons: buttons, footer: nyoutube})
@@ -205,7 +205,7 @@ async function startKris() {
 	for (let i of kon) {
 	    list.push({
 	    	displayName: await kris.getName(i + '@s.whatsapp.net'),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await kris.getName(i + '@s.whatsapp.net')}\nFN:${await kris.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET:nazedev@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://instagram.com/kris.dev\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Indonesia;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await kris.getName(i + '@s.whatsapp.net')}\nFN:${await kris.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET:krisdev@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://instagram.com/kris.dev\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Indonesia;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 	    })
 	}
 	kris.sendMessage(jid, { contacts: { displayName: `${list.length} Kontak`, contacts: list }, ...opts }, { quoted })
