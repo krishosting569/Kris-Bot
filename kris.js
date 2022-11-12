@@ -43,8 +43,10 @@ const emoji = new EmojiAPI()
 const { exec, spawn, execSync } = require("child_process")
 const moment = require('moment-timezone')
 const { JSDOM } = require('jsdom')
+const { jadibot, conns } = require('./jadibot')
 const speed = require('performance-now')
 const { performance } = require('perf_hooks')
+const db_user = JSON.parse(fs.readFileSync('./database/pengguna.json'));
 const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom, getGroupAdmins } = require('./lib/myfunc')
@@ -105,6 +107,7 @@ module.exports = kris = async (kris, m, chatUpdate, store) => {
         const botNumber = await kris.decodeJid(kris.user.id)
         const isCreator = [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const itsMe = m.sender == botNumber ? true : false
+        const isAutoDownloadTT = DB_Tiktok.includes(from) ? true : false
         const text = q = args.join(" ")
         const quoted = m.quoted ? m.quoted : m
         const mime = (quoted.msg || quoted).mimetype || ''
@@ -1683,6 +1686,42 @@ ${Object.entries(global.db.data.sticker).map(([key, value], index) => `${index +
                 kris.sendText(m.chat, teks, m, { mentions: Object.values(global.db.data.sticker).map(x => x.mentionedJid).reduce((a,b) => [...a, ...b], []) })
             }
             break
+            case 'verify':{
+if (cekUser("id", sender) !== null) return reply('Kamu sudah terdaftar !!')
+var res_us = `${makeid(10)}`
+var diacuk = `${db_user.length+1}`
+var user_name = `#GRXY${diacuk}`
+let object_user = {"id": sender, "name": user_name, "seri": res_us, "premium": false}
+db_user.push(object_user)
+fs.writeFileSync('./database/pengguna.json', JSON.stringify(db_user))
+mentions(`𝖬𝖾𝗆𝗎𝖺𝗍 𝖴𝗌𝖾𝗋 @${sender.split("@")[0]}`, [sender])
+await sleep(1500)
+var verify_teks =`───「 𝗧𝗘𝗥𝗩𝗘𝗥𝗜𝗙𝗜𝗞𝗔𝗦𝗜 」────
+
+ ○ ID : @${sender.split('@')[0]}
+ ○ Name : ${user_name}
+ ○ Seri : ${res_us}
+ ○ Premium : (${cekUser("premium", sender)? '✓':'✘'})
+`
+var buttonMessage = {
+text: verify_teks,
+footer: 'Klik button untuk melihat menu',
+mentions: [sender],
+buttons: [
+{ buttonId: '#menu', buttonText: {displayText: '️⋮☰ 𝗠𝗘𝗡𝗨'}, type: 1}
+],
+headerType: 1
+}
+conn.sendMessage(from, buttonMessage, {quoted:msg})
+await sleep(1000)
+var teksss_verify =`𝙍𝙀𝙂𝙄𝙎𝙏𝙀𝙍 𝙐𝙎𝙀𝙍
+○ ID : @${sender.split('@')[0]}
+○ Seri : ${res_us}
+○ Name : ${user_name}
+○ Terdaftar : ${db_user.length}`
+conn.sendMessage(`${setting.ownerNumber}`, {text:teksss_verify, mentions: [sender]})
+}
+break
             case 'lockcmd': {
                 if (!isCreator) throw mess.owner
                 if (!m.quoted) throw 'Reply Pesan!'
@@ -3177,15 +3216,27 @@ break
             }
             break
             case 'tiktokvideo':{
-            if (!q) return reply(`Link Nya Kak???\nContoh ${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
-            let res = await tiktokdl(q)
-kris.sendMessage(m.chat,{video:{url: res.media[1].url},caption: `${mess.succes}`},{quoted:m})
+         if (isGroup && isAutoDownloadTT) {
+if (chats.match(/(tiktok.com)/gi)){
+reply('Url tiktok terdekteksi\nSedang mengecek data url.')
+await sleep(3000)
+var tt_res = await fetchJson(`https://api.lolhuman.xyz/api/tiktok?apikey=SadTeams&url=${chats}`)
+if (tt_res.status == 404) return reply('Gagal url tidak ditemukan')
+var lagu_tt = await getBuffer(`https://api.lolhuman.xyz/api/tiktokmusic?apikey=SadTeams&url=${chats}`)
+reply(`𝗧𝗜𝗞𝗧𝗢𝗞 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗
+
+*Author:* Kris Official
+*Title:* ${tt_res.result.title}
+*Durasi:* ${tt_res.result.duration}
+*Username:* ${tt_res.result.author.username}
+*Nickname:* ${tt_res.result.author.nickname}
+*Source:* ${chats}
+
+Video & Audio sedang dikirim...`)
+conn.sendMessage(sender,{video:{url:tt_res.result.link}, caption:'No Watermark!'}, {quotes:msg})
+conn.sendMessage(sender,{audio:lagu_tt, mimetype:'audio/mpeg', fileName:'tiktokMusic.mp3'}, {quotes:msg})
+if (isGroup) return conn.sendMessage(from, {text:'Media sudah dikirim lewat chat pribadi bot.'}, {quoted:msg})
 }
-            break
-            case 'tiktokaudio':{
-            if (!q) return reply(`Link Nya Kak???\nContoh ${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
-            let tytyd = await tiktokdl(q)
-kris.sendMessage(m.chat,{audio:{url: tytyd.media[2].url}, mimetype: "audio/mp4", ptt:false},{quoted:m})
 }
             break
             case 'jadibot': {
